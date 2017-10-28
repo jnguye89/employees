@@ -36,7 +36,7 @@ var config = {
 	 	tableRowAdd.append("<td>$ " + childSnapshot.val().monthlyRate);
   })
 });
-=======
+
  
 //Add new employees
 
