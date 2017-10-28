@@ -11,6 +11,7 @@ var config = {
  var database = firebase.database();
 
 
+
  // database.ref().on("value", function(snapshot){
  // 	console.log(snapshot);
  // 	// console.log(snapshot.val().name);
@@ -35,3 +36,33 @@ var config = {
 	 	tableRowAdd.append("<td>$ " + childSnapshot.val().monthlyRate);
   })
 });
+=======
+ 
+//Add new employees
+
+$("button").on("click", function(event) {
+  // Prevent form from submitting
+  event.preventDefault();
+
+  // Get the input values
+
+  var newEmployee = $("#employee-name").val().trim();
+  var newRole = $("#employee-role").val().trim();
+  var startDate = $("#start-date").val().trim();
+  var monthlyRate = $("#monthly-rate").val().trim();
+
+
+  console.log("employee: "+newEmployee);
+  console.log("role: "+newRole);
+  console.log("start: "+startDate);
+  console.log("rate: "+monthlyRate);
+
+  database.ref().push({
+  	name: newEmployee,
+  	role: newRole,
+  	start: startDate,
+  	rate: monthlyRate
+  });
+ 	
+ });
+
